@@ -591,6 +591,109 @@ export default function Index() {
         </div>
       </section>
 
+      <section className="py-20 border-t">
+        <div className="container mx-auto px-4">
+          <div className="max-w-6xl mx-auto">
+            <div className="mb-16 text-center">
+              <span className="text-sm uppercase tracking-wider text-muted-foreground font-medium">Галерея</span>
+              <h3 className="text-3xl md:text-4xl font-bold mt-2">Наши системы в работе</h3>
+              <p className="text-muted-foreground mt-4 max-w-2xl mx-auto">
+                Установка, настройка и использование автопилотов на реальной технике
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+              <div className="relative group overflow-hidden rounded-sm border-2 aspect-[4/3]">
+                <img 
+                  src="https://cdn.poehali.dev/projects/e1c50966-8591-450f-8168-b5c2de749970/files/03696644-40a9-43d8-a15f-42610c58e30f.jpg" 
+                  alt="Трактор с установленным автопилотом"
+                  className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <div className="absolute bottom-4 left-4 right-4">
+                    <p className="text-white font-medium text-sm">Трактор с автопилотом AgriDrive Pro</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="relative group overflow-hidden rounded-sm border-2 aspect-[4/3]">
+                <img 
+                  src="https://cdn.poehali.dev/projects/e1c50966-8591-450f-8168-b5c2de749970/files/38c99c87-0924-47ed-af07-6c947ac0b5ae.jpg" 
+                  alt="Комбайн с системой навигации"
+                  className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <div className="absolute bottom-4 left-4 right-4">
+                    <p className="text-white font-medium text-sm">Комбайн с дисплеем CombiNav Elite</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="relative group overflow-hidden rounded-sm border-2 aspect-[4/3]">
+                <img 
+                  src="https://cdn.poehali.dev/projects/e1c50966-8591-450f-8168-b5c2de749970/files/9a9bb212-4c94-4e1a-9846-200d24c3dc54.jpg" 
+                  alt="GPS антенна на крыше трактора"
+                  className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <div className="absolute bottom-4 left-4 right-4">
+                    <p className="text-white font-medium text-sm">GPS антенна высокой точности</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              <div className="relative group overflow-hidden rounded-sm border-2 aspect-[4/3]">
+                <img 
+                  src="https://cdn.poehali.dev/projects/e1c50966-8591-450f-8168-b5c2de749970/files/eb594f5d-b7f8-48f3-a9fc-59f0b7dba485.jpg" 
+                  alt="Панель управления автопилотом"
+                  className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <div className="absolute bottom-4 left-4 right-4">
+                    <p className="text-white font-medium text-sm">Интерфейс управления в кабине</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="relative group overflow-hidden rounded-sm border-2 aspect-[4/3]">
+                <img 
+                  src="https://cdn.poehali.dev/projects/e1c50966-8591-450f-8168-b5c2de749970/files/8453b8f0-a173-48b1-b934-baee8d60011b.jpg" 
+                  alt="Техника работает параллельными проходами"
+                  className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <div className="absolute bottom-4 left-4 right-4">
+                    <p className="text-white font-medium text-sm">Точная работа в поле</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="relative group overflow-hidden rounded-sm border-2 aspect-[4/3]">
+                <img 
+                  src="https://cdn.poehali.dev/projects/e1c50966-8591-450f-8168-b5c2de749970/files/a55aa9a7-6b0f-493c-a6cc-acf1962f7946.jpg" 
+                  alt="Процесс установки системы"
+                  className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <div className="absolute bottom-4 left-4 right-4">
+                    <p className="text-white font-medium text-sm">Установка специалистами</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="mt-12 text-center">
+              <Button size="lg" className="rounded-sm">
+                <Icon name="Camera" size={20} className="mr-2" />
+                Смотреть все фото
+              </Button>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section id="about" className="py-20 border-y">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">

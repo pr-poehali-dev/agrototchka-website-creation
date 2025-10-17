@@ -8,86 +8,86 @@ import Icon from '@/components/ui/icon';
 const products = [
   {
     id: 1,
-    name: 'Умное орошение AgriFlow',
-    category: 'Системы полива',
-    price: '125 000 ₽',
-    description: 'Автоматизированная система капельного орошения с датчиками влажности почвы',
-    features: ['IoT мониторинг', 'Экономия воды до 40%', 'Удалённое управление']
+    name: 'Автопилот AgriDrive Pro',
+    category: 'Автопилоты',
+    price: '450 000 ₽',
+    description: 'Система автоматического вождения для тракторов любых марок с точностью 2,5 см',
+    features: ['RTK GPS точность', 'Автоповороты', 'Круглосуточная работа']
   },
   {
     id: 2,
-    name: 'Датчики почвы SoilSense Pro',
-    category: 'Аналитика',
-    price: '45 000 ₽',
-    description: 'Комплект датчиков для анализа NPK, pH и влажности почвы',
-    features: ['Точность 98%', 'Wireless передача', 'Батарея 2 года']
+    name: 'Автопилот CombiNav Elite',
+    category: 'Автопилоты',
+    price: '580 000 ₽',
+    description: 'Премиум система для комбайнов с интеллектуальным управлением жаткой',
+    features: ['Точность 1,8 см', 'Контроль жатки', 'Картирование урожайности']
   },
   {
     id: 3,
-    name: 'Биоудобрения EcoGrow',
-    category: 'Агрохимия',
-    price: '8 500 ₽',
-    description: 'Органические биоудобрения нового поколения на основе микробиома',
-    features: ['100% органика', 'Увеличение урожая +25%', 'Сертификат ЕС']
+    name: 'Автопилот OptiSteer Basic',
+    category: 'Автопилоты',
+    price: '280 000 ₽',
+    description: 'Базовая система автовождения для малых и средних хозяйств',
+    features: ['Точность 5 см', 'Простая установка', 'Любая техника']
   },
   {
     id: 4,
-    name: 'Метеостанция WeatherTrack',
-    category: 'Метеорология',
-    price: '78 000 ₽',
-    description: 'Профессиональная метеостанция с прогнозированием и оповещениями',
-    features: ['Прогноз на 7 дней', 'SMS-оповещения', 'Архив данных']
+    name: 'Система курсоуказания PathGuide',
+    category: 'Курсоуказатели',
+    price: '95 000 ₽',
+    description: 'Световой курсоуказатель для ручного вождения с GPS',
+    features: ['Экран 10"', 'Параллельное вождение', 'База для upgrade']
   },
   {
     id: 5,
-    name: 'Дроны для опрыскивания AgroAir',
-    category: 'Техника',
-    price: '890 000 ₽',
-    description: 'БПЛА для точного опрыскивания и мониторинга посевов',
-    features: ['До 15 га/час', 'GPS навигация', 'HD камера']
+    name: 'Электроруль AutoSteer Plus',
+    category: 'Компоненты',
+    price: '180 000 ₽',
+    description: 'Универсальный электрический рулевой привод для автопилотов',
+    features: ['Установка за 2 часа', 'Для любых тракторов', 'Защита IP67']
   },
   {
     id: 6,
-    name: 'Система учёта FarmERP',
-    category: 'Софт',
-    price: '25 000 ₽/год',
-    description: 'Облачная ERP-система для управления сельхозпредприятием',
-    features: ['Учёт техники', 'Склад и логистика', 'Отчётность']
+    name: 'RTK база FieldStation',
+    category: 'Оборудование',
+    price: '320 000 ₽',
+    description: 'Базовая RTK станция для максимальной точности в радиусе 20 км',
+    features: ['Точность <2 см', 'Радиус 20 км', 'Своя сеть RTK']
   }
 ];
 
 const articles = [
   {
     id: 1,
-    title: 'Точное земледелие: революция в агросекторе',
-    category: 'Технологии',
+    title: 'Автопилот vs ручное вождение: реальная экономика',
+    category: 'Экономика',
     date: '15 октября 2025',
-    excerpt: 'Как современные технологии IoT, AI и дронов трансформируют традиционное сельское хозяйство и повышают урожайность.',
-    readTime: '8 мин'
+    excerpt: 'Подробный расчёт окупаемости автопилота: экономия топлива 15%, снижение перекрытий до 98%, рост производительности на 25%.',
+    readTime: '10 мин'
   },
   {
     id: 2,
-    title: 'Севооборот 2.0: научный подход к планированию',
-    category: 'Агрономия',
+    title: 'Как выбрать автопилот: гид по системам навигации',
+    category: 'Гайды',
     date: '12 октября 2025',
-    excerpt: 'Детальное руководство по организации севооборота с учётом анализа почвы и климатических данных.',
+    excerpt: 'RTK, EGNOS или SF3? Разбираем типы коррекции GPS, точность, стоимость и подбираем оптимальную систему под ваши задачи.',
     readTime: '12 мин'
   },
   {
     id: 3,
-    title: 'Экономия воды: 5 проверенных методов',
-    category: 'Ресурсы',
+    title: 'Установка автопилота: пошаговая инструкция',
+    category: 'Инструкции',
     date: '8 октября 2025',
-    excerpt: 'Практические решения для снижения расхода воды без потери эффективности орошения на 30-40%.',
-    readTime: '6 мин'
+    excerpt: 'От распаковки до первого прохода: как правильно установить и настроить систему автовождения на трактор своими силами.',
+    readTime: '15 мин'
   },
   {
     id: 4,
-    title: 'Органическое земледелие: мифы и реальность',
-    category: 'Экология',
+    title: 'Ночная работа с автопилотом: особенности и преимущества',
+    category: 'Опыт',
     date: '3 октября 2025',
-    excerpt: 'Разбираем популярные заблуждения об органическом земледелии и рассказываем о реальных преимуществах.',
-    readTime: '10 мин'
+    excerpt: 'Как автопилот позволяет работать в тёмное время суток без потери точности и увеличить производительность техники в 1,5 раза.',
+    readTime: '8 мин'
   }
 ];
 
@@ -108,7 +108,7 @@ export default function Index() {
             <Icon name="Sprout" size={32} className="text-primary" />
             <div>
               <h1 className="text-2xl font-bold text-primary">Агроточка</h1>
-              <p className="text-xs text-muted-foreground">Инновации в агросекторе</p>
+              <p className="text-xs text-muted-foreground">Автопилоты для сельхозтехники</p>
             </div>
           </div>
           <nav className="hidden md:flex items-center gap-6">
@@ -134,10 +134,10 @@ export default function Index() {
               Технологии будущего
             </Badge>
             <h2 className="text-5xl font-bold mb-6 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-              Инновационные решения для современного сельского хозяйства
+              Автопилоты для тракторов, комбайнов и сельхозтехники
             </h2>
             <p className="text-xl text-muted-foreground mb-8">
-              Помогаем аграриям повышать урожайность и эффективность с помощью передовых технологий IoT, ИИ и точного земледелия
+              Системы автоматического вождения с точностью до 2 см. Экономьте топливо, работайте ночью, снижайте усталость механизаторов
             </p>
             <div className="flex items-center justify-center gap-4">
               <Button size="lg" className="gap-2">
@@ -156,9 +156,9 @@ export default function Index() {
       <section id="catalog" className="py-16">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h3 className="text-3xl font-bold mb-4">Каталог продукции</h3>
+            <h3 className="text-3xl font-bold mb-4">Каталог автопилотов</h3>
             <p className="text-muted-foreground max-w-2xl mx-auto">
-              Профессиональное оборудование и решения для эффективного ведения сельского хозяйства
+              Системы автоматического вождения, курсоуказатели и оборудование для точного земледелия
             </p>
           </div>
 
@@ -222,7 +222,7 @@ export default function Index() {
           <div className="text-center mb-12">
             <h3 className="text-3xl font-bold mb-4">Полезные материалы</h3>
             <p className="text-muted-foreground max-w-2xl mx-auto">
-              Экспертные статьи о современных технологиях и практиках в сельском хозяйстве
+              Статьи об автопилотах, точном земледелии и автоматизации работы сельхозтехники
             </p>
           </div>
 
@@ -282,25 +282,25 @@ export default function Index() {
                 </div>
                 <h4 className="text-xl font-bold">12+ лет опыта</h4>
                 <p className="text-sm text-muted-foreground">
-                  Работаем с аграриями по всей России
+                  Установили 3500+ систем автопилотов
                 </p>
               </div>
               <div className="space-y-3">
                 <div className="w-16 h-16 bg-secondary/10 rounded-full flex items-center justify-center mx-auto">
                   <Icon name="Users" size={32} className="text-secondary" />
                 </div>
-                <h4 className="text-xl font-bold">2000+ клиентов</h4>
+                <h4 className="text-xl font-bold">2000+ хозяйств</h4>
                 <p className="text-sm text-muted-foreground">
-                  Доверяют нашим решениям
+                  Используют наши автопилоты
                 </p>
               </div>
               <div className="space-y-3">
                 <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto">
                   <Icon name="TrendingUp" size={32} className="text-primary" />
                 </div>
-                <h4 className="text-xl font-bold">+35% урожайность</h4>
+                <h4 className="text-xl font-bold">Экономия 15%</h4>
                 <p className="text-sm text-muted-foreground">
-                  Средний прирост у наших клиентов
+                  Топлива и ресурсов с автопилотом
                 </p>
               </div>
             </div>
@@ -317,16 +317,16 @@ export default function Index() {
                 <span className="font-bold text-lg">Агроточка</span>
               </div>
               <p className="text-sm text-muted-foreground">
-                Инновационные решения для эффективного сельского хозяйства
+                Автопилоты и системы точного земледелия для вашей техники
               </p>
             </div>
             <div>
               <h5 className="font-semibold mb-4">Продукция</h5>
               <ul className="space-y-2 text-sm text-muted-foreground">
-                <li><a href="#" className="hover:text-primary transition-colors">Системы полива</a></li>
-                <li><a href="#" className="hover:text-primary transition-colors">Датчики и аналитика</a></li>
-                <li><a href="#" className="hover:text-primary transition-colors">Агрохимия</a></li>
-                <li><a href="#" className="hover:text-primary transition-colors">Техника</a></li>
+                <li><a href="#" className="hover:text-primary transition-colors">Автопилоты</a></li>
+                <li><a href="#" className="hover:text-primary transition-colors">Курсоуказатели</a></li>
+                <li><a href="#" className="hover:text-primary transition-colors">RTK станции</a></li>
+                <li><a href="#" className="hover:text-primary transition-colors">Компоненты</a></li>
               </ul>
             </div>
             <div>

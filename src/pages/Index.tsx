@@ -93,6 +93,33 @@ const articles = [
   }
 ];
 
+const videos = [
+  {
+    id: 1,
+    title: 'Посев подсолнечника с автопилотом',
+    duration: '3:24',
+    views: '12.5K',
+    thumbnail: 'https://cdn.poehali.dev/projects/e1c50966-8591-450f-8168-b5c2de749970/files/03696644-40a9-43d8-a15f-42610c58e30f.jpg',
+    description: 'Работа трактора John Deere с системой AgriDrive Pro. Видно идеальную точность рядков и экономию семян.'
+  },
+  {
+    id: 2,
+    title: 'Установка системы за 2 часа',
+    duration: '5:12',
+    views: '8.3K',
+    thumbnail: 'https://cdn.poehali.dev/projects/e1c50966-8591-450f-8168-b5c2de749970/files/a55aa9a7-6b0f-493c-a6cc-acf1962f7946.jpg',
+    description: 'Полный процесс монтажа автопилота на трактор МТЗ-82. От распаковки до первого прохода.'
+  },
+  {
+    id: 3,
+    title: 'Уборка пшеницы ночью',
+    duration: '4:45',
+    views: '15.2K',
+    thumbnail: 'https://cdn.poehali.dev/projects/e1c50966-8591-450f-8168-b5c2de749970/files/38c99c87-0924-47ed-af07-6c947ac0b5ae.jpg',
+    description: 'Комбайн с CombiNav Elite работает в темноте с той же точностью, что и днём. Производительность +40%.'
+  }
+];
+
 const testimonials = [
   {
     id: 1,
@@ -688,6 +715,61 @@ export default function Index() {
               <Button size="lg" className="rounded-sm">
                 <Icon name="Camera" size={20} className="mr-2" />
                 Смотреть все фото
+              </Button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-20 bg-primary/5">
+        <div className="container mx-auto px-4">
+          <div className="max-w-6xl mx-auto">
+            <div className="mb-16 text-center">
+              <span className="text-sm uppercase tracking-wider text-muted-foreground font-medium">Видеообзоры</span>
+              <h3 className="text-3xl md:text-4xl font-bold mt-2">Системы в действии</h3>
+              <p className="text-muted-foreground mt-4 max-w-2xl mx-auto">
+                Смотрите, как работают наши автопилоты в реальных условиях
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {videos.map((video) => (
+                <Card key={video.id} className="border-2 rounded-sm overflow-hidden hover:border-primary transition-colors cursor-pointer group">
+                  <div className="relative aspect-video bg-muted">
+                    <img 
+                      src={video.thumbnail} 
+                      alt={video.title}
+                      className="w-full h-full object-cover"
+                    />
+                    <div className="absolute inset-0 bg-black/40 flex items-center justify-center group-hover:bg-black/50 transition-colors">
+                      <div className="w-16 h-16 rounded-full bg-white/90 flex items-center justify-center group-hover:scale-110 transition-transform">
+                        <Icon name="Play" size={28} className="text-primary ml-1" />
+                      </div>
+                    </div>
+                    <div className="absolute bottom-2 right-2 bg-black/80 text-white text-xs px-2 py-1 rounded">
+                      {video.duration}
+                    </div>
+                  </div>
+                  <CardHeader className="space-y-2">
+                    <CardTitle className="text-base line-clamp-2">{video.title}</CardTitle>
+                    <p className="text-sm text-muted-foreground line-clamp-2">
+                      {video.description}
+                    </p>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="flex items-center gap-2 text-xs text-muted-foreground">
+                      <Icon name="Eye" size={14} />
+                      <span>{video.views} просмотров</span>
+                    </div>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+
+            <div className="mt-12 text-center">
+              <Button size="lg" className="rounded-sm">
+                <Icon name="Youtube" size={20} className="mr-2" />
+                Все видео на YouTube
               </Button>
             </div>
           </div>

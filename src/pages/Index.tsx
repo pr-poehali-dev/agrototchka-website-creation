@@ -120,6 +120,41 @@ const videos = [
   }
 ];
 
+const certificates = [
+  {
+    id: 1,
+    title: 'ISO 9001:2015',
+    subtitle: 'Сертификат качества',
+    description: 'Международный стандарт системы менеджмента качества',
+    year: '2023',
+    image: 'https://cdn.poehali.dev/projects/e1c50966-8591-450f-8168-b5c2de749970/files/7f2a8849-94b4-427a-9a2f-93b4c0514392.jpg'
+  },
+  {
+    id: 2,
+    title: 'Лучший поставщик',
+    subtitle: 'Премия АгроТех 2024',
+    description: 'Награда за инновации в точном земледелии',
+    year: '2024',
+    image: 'https://cdn.poehali.dev/projects/e1c50966-8591-450f-8168-b5c2de749970/files/9bd73971-ef5c-4e47-820c-d3f118e0955b.jpg'
+  },
+  {
+    id: 3,
+    title: 'Официальный партнёр',
+    subtitle: 'John Deere',
+    description: 'Авторизованный дилер и сервисный центр',
+    year: '2022',
+    image: 'https://cdn.poehali.dev/projects/e1c50966-8591-450f-8168-b5c2de749970/files/76c5c6ed-b301-4c27-b1aa-5c6a6692b8a0.jpg'
+  },
+  {
+    id: 4,
+    title: 'Золотой стандарт',
+    subtitle: 'Национальная премия',
+    description: 'За вклад в развитие агропромышленного комплекса',
+    year: '2024',
+    image: 'https://cdn.poehali.dev/projects/e1c50966-8591-450f-8168-b5c2de749970/files/513441ad-7f06-43da-a181-104fa4644962.jpg'
+  }
+];
+
 const testimonials = [
   {
     id: 1,
@@ -771,6 +806,68 @@ export default function Index() {
                 <Icon name="Youtube" size={20} className="mr-2" />
                 Все видео на YouTube
               </Button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-20 border-t">
+        <div className="container mx-auto px-4">
+          <div className="max-w-6xl mx-auto">
+            <div className="mb-16 text-center">
+              <span className="text-sm uppercase tracking-wider text-muted-foreground font-medium">Сертификаты и награды</span>
+              <h3 className="text-3xl md:text-4xl font-bold mt-2">Подтверждённое качество</h3>
+              <p className="text-muted-foreground mt-4 max-w-2xl mx-auto">
+                Международные стандарты, официальные партнёрства и признание в отрасли
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+              {certificates.map((cert) => (
+                <Card key={cert.id} className="border-2 rounded-sm text-center hover:border-primary transition-colors group">
+                  <CardContent className="pt-6 space-y-4">
+                    <div className="relative aspect-[3/4] bg-muted rounded overflow-hidden mb-4">
+                      <img 
+                        src={cert.image} 
+                        alt={cert.title}
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                      />
+                      <div className="absolute top-2 right-2 bg-primary text-primary-foreground text-xs font-bold px-2 py-1 rounded">
+                        {cert.year}
+                      </div>
+                    </div>
+                    <div className="space-y-2">
+                      <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mx-auto">
+                        <Icon name="Award" size={24} className="text-primary" />
+                      </div>
+                      <h4 className="font-bold text-base">{cert.title}</h4>
+                      <p className="text-sm font-medium text-primary">{cert.subtitle}</p>
+                      <p className="text-xs text-muted-foreground leading-relaxed">
+                        {cert.description}
+                      </p>
+                    </div>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+
+            <div className="mt-12 grid grid-cols-2 md:grid-cols-4 gap-6 py-8 border-y">
+              <div className="text-center">
+                <div className="text-3xl md:text-4xl font-bold text-primary mb-2">12+</div>
+                <p className="text-sm text-muted-foreground">лет на рынке</p>
+              </div>
+              <div className="text-center">
+                <div className="text-3xl md:text-4xl font-bold text-primary mb-2">3500+</div>
+                <p className="text-sm text-muted-foreground">установок</p>
+              </div>
+              <div className="text-center">
+                <div className="text-3xl md:text-4xl font-bold text-primary mb-2">2000+</div>
+                <p className="text-sm text-muted-foreground">довольных клиентов</p>
+              </div>
+              <div className="text-center">
+                <div className="text-3xl md:text-4xl font-bold text-primary mb-2">98%</div>
+                <p className="text-sm text-muted-foreground">рекомендуют нас</p>
+              </div>
             </div>
           </div>
         </div>

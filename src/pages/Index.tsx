@@ -1,8 +1,10 @@
-import { useState } from 'react';
+import { useState, useMemo } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
+import { Input } from '@/components/ui/input';
+import { Label } from '@/components/ui/label';
 import Icon from '@/components/ui/icon';
 
 const products = [
@@ -93,12 +95,41 @@ const articles = [
 
 export default function Index() {
   const [selectedCategory, setSelectedCategory] = useState('all');
+  const [hectares, setHectares] = useState(500);
+  const [fuelPrice, setFuelPrice] = useState(60);
+  const [hoursPerYear, setHoursPerYear] = useState(800);
 
   const categories = ['all', ...Array.from(new Set(products.map(p => p.category)))];
   
   const filteredProducts = selectedCategory === 'all' 
     ? products 
     : products.filter(p => p.category === selectedCategory);
+
+  const calculations = useMemo(() => {
+    const fuelSavingsPerHectare = 1.5;
+    const totalFuelSavings = hectares * fuelSavingsPerHectare;
+    const fuelSavingsMoney = totalFuelSavings * fuelPrice;
+    
+    const timeSavingsPercent = 20;
+    const timeSavingsHours = (hoursPerYear * timeSavingsPercent) / 100;
+    const timeSavingsMoney = timeSavingsHours * 800;
+    
+    const overlapReduction = hectares * 0.05 * 2000;
+    
+    const totalSavings = fuelSavingsMoney + timeSavingsMoney + overlapReduction;
+    const autopilotCost = 450000;
+    const paybackMonths = Math.round((autopilotCost / totalSavings) * 12);
+    
+    return {
+      fuelSavingsLiters: Math.round(totalFuelSavings),
+      fuelSavingsMoney: Math.round(fuelSavingsMoney),
+      timeSavingsHours: Math.round(timeSavingsHours),
+      timeSavingsMoney: Math.round(timeSavingsMoney),
+      overlapReduction: Math.round(overlapReduction),
+      totalSavings: Math.round(totalSavings),
+      paybackMonths
+    };
+  }, [hectares, fuelPrice, hoursPerYear]);
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-background to-accent/20">
@@ -268,6 +299,146 @@ export default function Index() {
               Все статьи
               <Icon name="Library" size={20} className="ml-2" />
             </Button>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-16 bg-gradient-to-br from-primary/5 to-secondary/5">
+        <div className="container mx-auto px-4">
+          <div className="max-w-5xl mx-auto">
+            <div className="text-center mb-12">
+              <Badge className="mb-4" variant="secondary">
+                <Icon name="Calculator" size={14} className="mr-1" />
+                Калькулятор
+              </Badge>
+              <h3 className="text-3xl font-bold mb-4">Рассчитайте окупаемость автопилота</h3>
+              <p className="text-muted-foreground max-w-2xl mx-auto">
+                Узнайте, сколько сэкономите на топливе, времени и ресурсах с системой автовождения
+              </p>
+            </div>
+
+            <Card className="shadow-xl">
+              <CardContent className="pt-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                  <div className="space-y-6">
+                    <div className="space-y-2">
+                      <Label htmlFor="hectares" className="flex items-center gap-2">
+                        <Icon name="Mountain" size={16} className="text-primary" />
+                        Площадь обработки (га/год)
+                      </Label>
+                      <Input
+                        id="hectares"
+                        type="number"
+                        value={hectares}
+                        onChange={(e) => setHectares(Number(e.target.value))}
+                        className="text-lg"
+                      />
+                    </div>
+
+                    <div className="space-y-2">
+                      <Label htmlFor="fuel" className="flex items-center gap-2">
+                        <Icon name="Fuel" size={16} className="text-primary" />
+                        Цена топлива (₽/л)
+                      </Label>
+                      <Input
+                        id="fuel"
+                        type="number"
+                        value={fuelPrice}
+                        onChange={(e) => setFuelPrice(Number(e.target.value))}
+                        className="text-lg"
+                      />
+                    </div>
+
+                    <div className="space-y-2">
+                      <Label htmlFor="hours" className="flex items-center gap-2">
+                        <Icon name="Clock" size={16} className="text-primary" />
+                        Часов работы в год
+                      </Label>
+                      <Input
+                        id="hours"
+                        type="number"
+                        value={hoursPerYear}
+                        onChange={(e) => setHoursPerYear(Number(e.target.value))}
+                        className="text-lg"
+                      />
+                    </div>
+                  </div>
+
+                  <div className="bg-accent/30 rounded-lg p-6 space-y-4">
+                    <h4 className="text-xl font-bold mb-4 flex items-center gap-2">
+                      <Icon name="TrendingUp" size={24} className="text-primary" />
+                      Годовая экономия
+                    </h4>
+
+                    <div className="space-y-3">
+                      <div className="flex items-start justify-between py-2 border-b border-border/50">
+                        <div className="flex items-center gap-2">
+                          <Icon name="Droplet" size={16} className="text-secondary" />
+                          <span className="text-sm">Топливо</span>
+                        </div>
+                        <div className="text-right">
+                          <p className="font-bold text-lg">{calculations.fuelSavingsMoney.toLocaleString()} ₽</p>
+                          <p className="text-xs text-muted-foreground">{calculations.fuelSavingsLiters} л</p>
+                        </div>
+                      </div>
+
+                      <div className="flex items-start justify-between py-2 border-b border-border/50">
+                        <div className="flex items-center gap-2">
+                          <Icon name="Timer" size={16} className="text-secondary" />
+                          <span className="text-sm">Время</span>
+                        </div>
+                        <div className="text-right">
+                          <p className="font-bold text-lg">{calculations.timeSavingsMoney.toLocaleString()} ₽</p>
+                          <p className="text-xs text-muted-foreground">{calculations.timeSavingsHours} часов</p>
+                        </div>
+                      </div>
+
+                      <div className="flex items-start justify-between py-2 border-b border-border/50">
+                        <div className="flex items-center gap-2">
+                          <Icon name="BarChart3" size={16} className="text-secondary" />
+                          <span className="text-sm">Перекрытия</span>
+                        </div>
+                        <div className="text-right">
+                          <p className="font-bold text-lg">{calculations.overlapReduction.toLocaleString()} ₽</p>
+                          <p className="text-xs text-muted-foreground">-5% площади</p>
+                        </div>
+                      </div>
+
+                      <div className="bg-primary/10 rounded-lg p-4 mt-4">
+                        <div className="flex items-center justify-between mb-2">
+                          <span className="font-semibold">Итого за год:</span>
+                          <span className="text-2xl font-bold text-primary">{calculations.totalSavings.toLocaleString()} ₽</span>
+                        </div>
+                        <div className="flex items-center justify-between text-sm">
+                          <span className="text-muted-foreground">Окупаемость:</span>
+                          <span className="font-bold text-secondary">{calculations.paybackMonths} мес</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </CardContent>
+              <CardFooter className="bg-muted/30 flex-col gap-4">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4 w-full text-center text-sm">
+                  <div className="flex items-center justify-center gap-2">
+                    <Icon name="CheckCircle2" size={16} className="text-primary" />
+                    <span>Экономия топлива 15%</span>
+                  </div>
+                  <div className="flex items-center justify-center gap-2">
+                    <Icon name="CheckCircle2" size={16} className="text-primary" />
+                    <span>Рост производительности 25%</span>
+                  </div>
+                  <div className="flex items-center justify-center gap-2">
+                    <Icon name="CheckCircle2" size={16} className="text-primary" />
+                    <span>Работа круглосуточно</span>
+                  </div>
+                </div>
+                <Button size="lg" className="w-full md:w-auto">
+                  <Icon name="ShoppingCart" size={20} className="mr-2" />
+                  Заказать автопилот
+                </Button>
+              </CardFooter>
+            </Card>
           </div>
         </div>
       </section>
